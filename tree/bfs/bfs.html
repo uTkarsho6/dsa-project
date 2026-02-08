@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BFS Tree Traversal</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <br/>
+  <h1 class="header">Breadth First Search (BFS)</h1>
+  
+  <canvas id="treeCanvas"></canvas>
+  
+  <br/><br/>
+  <div class="controls">
+     <label for="searchValue">
+      Value to search:
+     </label>
+     <input type="number" id="searchValue" name="searchValue" />
+     <input type="button" id="search_btn" value="START BFS"/>
+     <input type="button" id="new_tree_btn" value="NEW TREE"/>
+     <button class="return" onclick="location.href = '../treeIndex.html'">RETURN</button>
+     <br/><br/>
+     <div id="output_text"></div>
+     <div id="traversal_order"></div>
+  </div>
+  
+  <div class="col" id="speed">
+    <span>SPEED
+        <input id="speed_input" type="range" min="100" max="2000" step="100" value="500">
+    </span>
+  </div>
+  
+  <div class="col" id="depthControl">
+    <span>TREE DEPTH
+      <input id="tree_depth" type="range" min="2" max="4" step="1" value="3">
+  </span>
+  </div>
+  
+  <script src="bfs.js"></script>
+</body>
+</html>
