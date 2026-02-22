@@ -4,6 +4,14 @@ function swap(element1, element2) {
     let temp = element1.style.height;
     element1.style.height = element2.style.height;
     element2.style.height = temp;  
+
+    const label1 = element1.querySelector('.bar-label');
+    const label2 = element2.querySelector('.bar-label');
+    if (label1 && label2) {
+        const tmpText = label1.textContent;
+        label1.textContent = label2.textContent;
+        label2.textContent = tmpText;
+    }
 }
 
 function disableSortingBtn(){
@@ -59,10 +67,10 @@ function createNewArray(noOfBars = 20) {
     for (let i = 0; i < noOfBars; i++) {
         const bar = document.createElement("div");
         bar.style.height = `${array[i]*2}px`;//height of div element
-        // const label = document.createElement("div");
-        // label.innerHTML = array[i];
-        // label.classList.add('label');
-        // bar.appendChild(label);
+        const label = document.createElement("div");
+        label.innerHTML = array[i];
+        label.classList.add('bar-label');
+        bar.appendChild(label);
         bar.classList.add('bar');
         bar.classList.add('flex-item');
         bar.classList.add(`barNo${i}`);

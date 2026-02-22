@@ -67,6 +67,10 @@ function generateBar(numOfBars)
 
     bars.style.height=`${unsortedArray[i]*3}px`;
     bars.style.transform=`translate(${i * 30}px)`;
+    const label = document.createElement("div");
+    label.classList.add("bar-label");
+    label.textContent = unsortedArray[i];
+    bars.appendChild(label);
 
     container.appendChild(bars);
   }
@@ -104,10 +108,16 @@ async function mergeSort(arr) {
 
     //visualize it for right and left side
     bars[k].style.height = arr[k] * 3 + "px";
+    if (bars[k].querySelector('.bar-label')) {
+      bars[k].querySelector('.bar-label').textContent = arr[k];
+    }
     playNote(200+k*200);
     bars[k].style.backgroundColor = "lightgreen";
     if (k + arr.length < bars.length) {
       bars[k + arr.length].style.height = arr[k] * 3+ "px";
+      if (bars[k + arr.length].querySelector('.bar-label')) {
+        bars[k + arr.length].querySelector('.bar-label').textContent = arr[k];
+      }
       console.log(arr[k] * 3);
       playNote(300+k*300);
       bars[k + arr.length].style.backgroundColor = "yellow";
@@ -119,6 +129,9 @@ async function mergeSort(arr) {
   while (i < left.length) {
     arr[k] = left[i];
     bars[k].style.height = arr[k] *3 + "px";
+    if (bars[k].querySelector('.bar-label')) {
+      bars[k].querySelector('.bar-label').textContent = arr[k];
+    }
     playNote(200+k*200);
     bars[k].style.backgroundColor = "lightgreen";
     await timeDelay(delay);
@@ -129,6 +142,9 @@ async function mergeSort(arr) {
   while (j < right.length) {
     arr[k] = right[j];
     bars[k].style.height = arr[k] * 3 + "px";
+    if (bars[k].querySelector('.bar-label')) {
+      bars[k].querySelector('.bar-label').textContent = arr[k];
+    }
     playNote(200+k*200);
     bars[k].style.backgroundColor = "lightgreen";
     await timeDelay(delay);

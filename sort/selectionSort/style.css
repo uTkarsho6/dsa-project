@@ -30,6 +30,17 @@ body{
     margin: 4px;
     padding: 10px;
     background-color: #6b5b95;
+    position: relative;
+}
+.bar-label{
+    position: absolute;
+    top: -18px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 12px;
+    color: #fff;
+    background: transparent;
+    pointer-events: none;
 }
 .button{
     margin: 30px 20px;

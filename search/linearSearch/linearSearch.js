@@ -169,7 +169,6 @@ async function linearSearch(array)
 new_array_btn.addEventListener("click",function(){
   enableSearchingBtn();
   enableArraySizeBtn();
- sortedArray=[];
  unsortedArray=[];
  generateArray(numOfBars);
  generateBar(unsortedArray);

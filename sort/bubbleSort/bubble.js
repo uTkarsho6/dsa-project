@@ -93,6 +93,11 @@ function showbars(indices) {
     bar.style.height = array[i]*100+"%";
     bar.classList.add("bar");
 
+    const label = document.createElement("div");
+    label.classList.add("bar-label");
+    label.textContent = Math.round(array[i] * 100);
+    bar.appendChild(label);
+
     if (indices && indices.includes(i)) {
       bar.style.backgroundColor = "red";
     }

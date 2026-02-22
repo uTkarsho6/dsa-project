@@ -63,6 +63,10 @@ function generateBar(numOfBars) {
 
         bars.style.height = `${unsortedArray[i] * 3}px`;
         bars.style.transform = `translate(${i * 30}px)`;
+        const label = document.createElement("div");
+        label.classList.add("bar-label");
+        label.textContent = unsortedArray[i];
+        bars.appendChild(label);
 
         container.appendChild(bars);
     }
@@ -95,9 +99,15 @@ async function shellSort(array) {
                     temp = array[i];
                     array[i] = array[k];
                     bars[i].style.height = `${array[i] * 3}px`;
+                    if (bars[i].querySelector('.bar-label')) {
+                        bars[i].querySelector('.bar-label').textContent = array[i];
+                    }
                     await timeDelay(delay);
                     array[k] = temp;
                     bars[k].style.height = `${array[i + Gap] * 3}px`;
+                    if (bars[k].querySelector('.bar-label')) {
+                        bars[k].querySelector('.bar-label').textContent = array[k];
+                    }
                     playNote(200+i*200);
                     playNote(200+j*200);
                     await timeDelay(delay);
