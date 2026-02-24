@@ -118,6 +118,8 @@ async function linearSearch(array)
 
   let num=document.getElementById("inputedData").value;
 
+  //main logic
+
   for(let i=0;i<bars.length;i++)
   {
     bars[i].style.backgroundColor="green";
@@ -190,6 +192,7 @@ displayBarPosition(unsortedArray);
 
 let audioCtx = null;
 
+//sound
 function playNote(freq)
 {
     if(audioCtx==null)

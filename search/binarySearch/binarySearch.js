@@ -110,6 +110,8 @@ function displayBarPosition(num)
   }
 }
 
+// sort the array
+
 function shellSort(array)
 {
   let Gap=numOfBars;
@@ -154,7 +156,9 @@ async function binarySearch(array){
   output.innerText="";
   output2.innerText="";
   dataOutput.innerText="";
+
   //algorithm
+
   let start=0;
   let end=(bars.length-1);
   let pos=-1;
